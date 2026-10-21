@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             background-color: #fffaf0;
             color: #4a4a4a;
@@ -21,7 +20,6 @@
             min-height: 100vh;
             padding: 15px;
         }
-
         .card {
             background: #ffffff;
             border-radius: 20px;
@@ -32,19 +30,16 @@
             text-align: center;
             border: 1px solid #ffe4e1;
         }
-
         h2 {
             color: #d86b7d;
             margin-bottom: 15px;
             font-size: 1.4rem;
         }
-
         p {
             margin-bottom: 20px;
             font-size: 1.05rem;
             line-height: 1.4;
         }
-
         .btn-option {
             display: block;
             width: 100%;
@@ -54,247 +49,127 @@
             border: 2px solid #ffccd5;
             border-radius: 12px;
             color: #c9184a;
-            font-weight: bold;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
         }
-
-        .btn-option:hover {
+        .btn-option:active {
+            transform: scale(0.98);
             background-color: #ffccd5;
         }
-
-        .error-msg {
-            color: #e63946;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            display: none;
-            font-weight: bold;
-        }
-
         .hidden {
             display: none;
         }
-
-        /* Estilo del Collage de Fotos */
-        .collage-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 20px 0;
-            max-height: 380px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-
-        .polaroid {
-            background: #fff;
-            padding: 8px 8px 12px 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-            border-radius: 6px;
-            border: 1px solid #eee;
-            text-align: center;
-        }
-
-        .polaroid img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .polaroid p {
-            font-size: 0.75rem;
-            color: #666;
-            margin-top: 6px;
-            margin-bottom: 0;
-            font-style: italic;
-        }
-
-        /* Hacer que la última foto ocupe el ancho completo si es impar */
-        .polaroid:nth-child(7) {
-            grid-column: span 2;
-        }
-
-        .polaroid:nth-child(7) img {
-            height: 160px;
-        }
-
-        .video-container {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-
         video {
             width: 100%;
-            display: block;
-            border-radius: 12px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        .poem-box {
-            background: #fff5f5;
-            padding: 18px;
-            border-radius: 12px;
-            margin-top: 20px;
-            border-left: 4px solid #d86b7d;
-            text-align: left;
-            font-size: 0.95rem;
+        .poem {
+            background-color: #fff0f3;
+            padding: 20px;
+            border-radius: 15px;
+            font-style: italic;
+            color: #590d22;
             line-height: 1.6;
-        }
-
-        .poem-box h3 {
-            color: #d86b7d;
-            margin-bottom: 10px;
+            margin-top: 15px;
             text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- SECCIÓN DE PREGUNTAS -->
-        <div id="quiz-section">
-            <h2 id="question-title">Pregunta 1</h2>
-            <p id="question-text"></p>
-            
-            <div id="options-container"></div>
-
-            <p id="error-message" class="error-msg">❌ ¡Upps! Inténtalo de nuevo, mi amor...</p>
-        </div>
-
-        <!-- SECCIÓN FINAL: COLLAGE, VIDEO Y POEMA -->
-        <div id="final-section" class="hidden">
-            <h2>¡Lo lograste todo! ❤️</h2>
-            <p>Conoces cada detalle de nuestra historia. Mira nuestro collage de recuerdos:</p>
-            
-            <!-- Collage de Fotos -->
-            <div class="collage-container">
-                <div class="polaroid">
-                    <img src="1000384753.jpg" alt="Foto 1">
-                    <p>Nuestra boda 🚂✨</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000384767.jpg" alt="Foto 2">
-                    <p>Juntos por siempre 💖</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000385265.jpg" alt="Foto 3">
-                    <p>Nuestra celebración 🎉</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000002171.jpg" alt="Foto 4">
-                    <p>Lindo día con mi amor 🥰</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000002179.jpg" alt="Foto 5">
-                    <p>Momentos únicos 💫</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000002094.jpg" alt="Foto 6">
-                    <p>Mi novia hermosa 🎄</p>
-                </div>
-                <div class="polaroid">
-                    <img src="1000001920.jpg" alt="Foto 7">
-                    <p>Compañeros de vida 🌟</p>
-                </div>
-            </div>
-
-            <!-- Video con música -->
-            <div class="video-container">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-            </div>
-
-            <!-- Poema Hermoso -->
-            <div class="poem-box">
-                <h3>Para ti, mi amor</h3>
-                <p>
-                    Entre suspiros y miradas construimos este viaje,<br>
-                    como aquel viento que soplaba en La Serena,<br>
-                    donde el tiempo se detuvo y nos dio el mejor paisaje,<br>
-                    y la calma de tenerte se volvió mi cura buena.<br><br>
-                    Tú con tanta paciencia y yo con mi locura,<br>
-                    compartiendo los antojos y el gusto por comer,<br>
-                    cada instante a tu lado es una dulce ternura,<br>
-                    el refugio más hermoso que yo puedo tener.<br><br>
-                    Un veintiuno de octubre sellamos nuestra historia,<br>
-                    jurando ante los días caminar en la misma vía,<br>
-                    y si me preguntas hoy si te amo en la memoria:<br>
-                    <b>¡Mucho, mi muchacha, eres toda mi alegría!</b>
-                </p>
-            </div>
-        </div>
+<div class="card">
+    <!-- Cuestionario -->
+    <div id="quiz-container">
+        <h2 id="question-title">Trivia de Nosotros ❤️</h2>
+        <p id="question-text">Cargando pregunta...</p>
+        <div id="options-container"></div>
     </div>
 
-    <script>
-        const questions = [
-            {
-                question: "¿Cuál fue nuestra luna de miel?",
-                options: ["Santiago", "La Serena", "Viña del Mar", "Antofagasta"],
-                correct: 1
-            },
-            {
-                question: "¿Quién tiene más paciencia?",
-                options: ["Yo", "Mi esposo", "Los dos igual"],
-                correct: 1
-            },
-            {
-                question: "¿Cuál es nuestro pasatiempo favorito?",
-                options: ["Ver series", "Viajar", "Comer", "Dormir"],
-                correct: 2
-            },
-            {
-                question: "¿Cuándo nos casamos por el civil?",
-                options: ["15 de septiembre", "21 de octubre", "10 de noviembre"],
-                correct: 1
-            },
-            {
-                question: "¿Crees que te amo?",
-                options: ["Un poco", "Mucho mi muchacha", "Más o menos"],
-                correct: 1
-            }
-        ];
+    <!-- Contenido Sorpresa (Video + Poema) -->
+    <div id="surprise-container" class="hidden">
+        <h2>¡Sabía que lo recordarías todo! 🥰</h2>
+        <p>Tengo algo muy especial preparado para ti...</p>
+        
+        <video controls playsinline preload="metadata">
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
 
-        let currentQuestion = 0;
+        <div class="poem">
+            <p>Escribí tu nombre en el cielo, pero el viento lo borró.<br>
+            Escribí tu nombre en la arena, pero el mar lo arrastró.<br>
+            Escribí tu nombre en mi corazón, y ahí para siempre se quedó.<br><br>
+            <strong>¡Gracias por ser mi compañera de vida! ❤️</strong></p>
+        </div>
+    </div>
+</div>
 
-        function loadQuestion() {
-            document.getElementById('error-message').style.display = 'none';
-            const q = questions[currentQuestion];
-            document.getElementById('question-title').innerText = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
-            document.getElementById('question-text').innerText = q.question;
-
-            const container = document.getElementById('options-container');
-            container.innerHTML = '';
-
-            q.options.forEach((optionText, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'btn-option';
-                btn.innerText = optionText;
-                btn.onclick = () => checkAnswer(index);
-                container.appendChild(btn);
-            });
+<script>
+    const questions = [
+        {
+            q: "¿A dónde nos fuimos de Luna de Miel?",
+            options: ["Cancún", "La Serena", "Viña del Mar", "Pucón"],
+            answer: "La Serena"
+        },
+        {
+            q: "¿Quién de los dos tiene más paciencia en la relación?",
+            options: ["Mi esposo", "Yo (la esposa)", "Ninguno de los dos", "El gato / la mascota"],
+            answer: "Mi esposo"
+        },
+        {
+            q: "¿Cuál es nuestro pasatiempo favorito juntos?",
+            options: ["Hacer ejercicio", "Ver series", "Comer", "Viajar"],
+            answer: "Comer"
+        },
+        {
+            q: "¿Recuerdas la fecha exacta de nuestro Matrimonio?",
+            options: ["21 de Octubre", "14 de Febrero", "05 de Noviembre", "18 de Septiembre"],
+            answer: "21 de Octubre"
+        },
+        {
+            q: "¿Cuánto te ama tu esposo?",
+            options: ["Un poco", "Normal", "Mucho mi muchacha", "Un montón"],
+            answer: "Mucho mi muchacha"
         }
+    ];
 
-        function checkAnswer(selectedIndex) {
-            if (selectedIndex === questions[currentQuestion].correct) {
-                currentQuestion++;
-                if (currentQuestion < questions.length) {
-                    loadQuestion();
-                } else {
-                    document.getElementById('quiz-section').classList.add('hidden');
-                    document.getElementById('final-section').classList.remove('hidden');
-                }
+    let currentQuestion = 0;
+
+    function showQuestion() {
+        const q = questions[currentQuestion];
+        document.getElementById('question-text').innerText = q.q;
+        const optionsDiv = document.getElementById('options-container');
+        optionsDiv.innerHTML = '';
+
+        q.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-option';
+            btn.innerText = opt;
+            btn.onclick = () => checkAnswer(opt, q.answer);
+            optionsDiv.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selected, correct) {
+        if (selected === correct) {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
             } else {
-                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('quiz-container').classList.add('hidden');
+                document.getElementById('surprise-container').classList.remove('hidden');
             }
+        } else {
+            alert('¡Nop! Esa no es la respuesta correcta 😉 ¡Inténtalo de nuevo!');
         }
+    }
 
-        loadQuestion();
-    </script>
+    showQuestion();
+</script>
+
 </body>
 </html>
